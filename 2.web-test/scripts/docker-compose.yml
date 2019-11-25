@@ -1,0 +1,40 @@
+version: "3"
+services:
+  openresty:
+    build: ../docker/openresty
+    image: zongzw/openresty:latest
+    # image: openresty/openresty:latest
+    container_name: OPENRESTY
+    ports:
+      - 80:80
+    volumes:
+      - ${HOMEDIR}/conf.d/lua/nginx-server.conf:/etc/nginx/conf.d/default.conf
+      - ${HOMEDIR}/conf.d/lua/nginx-http.conf:/usr/local/openresty/nginx/conf/nginx.conf
+    networks:
+      restynet:
+        ipv4_address: 172.245.18.2
+
+  nginx:
+    image: nginx:latest
+    container_name: NGINX
+    ports:
+     - 81:80
+    volumes:
+     - ${HOMEDIR}/conf.d/njs/nginx.conf:/etc/nginx/nginx.conf
+     - ${HOMEDIR}/conf.d/njs/js-modules:/etc/nginx/js-modules
+     - ${HOMEDIR}/conf.d/njs/nestapp:/root/nestapp
+    networks:
+      restynet:
+        ipv4_address: 172.245.18.4
+
+
+# optional network setting, links seems more suitable in experienced cases.
+networks:
+  restynet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.245.18.0/24
+
+
