@@ -17,7 +17,7 @@ function run_md5_n_times_with_timer(num) {
         fin = md5(ns);
     }
     let et = new Date().getTime();
-    console.log(`${fin}: ${ns}, tv:${(et-st)*1000} millisecs`);
+    console.log(`${fin}: ${ns}, tv:${(et-st)} millisecs`);
 }
 
 if(process.argv.length !== 3) {

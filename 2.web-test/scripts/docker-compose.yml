@@ -15,14 +15,16 @@ services:
         ipv4_address: 172.245.18.2
 
   nginx:
-    image: nginx:latest
+    build: ../docker/nginx
+    image: zongzw/nginx:latest
+    # image: nginx:latest
     container_name: NGINX
     ports:
      - 81:80
     volumes:
      - ${HOMEDIR}/conf.d/njs/nginx.conf:/etc/nginx/nginx.conf
      - ${HOMEDIR}/conf.d/njs/js-modules:/etc/nginx/js-modules
-     - ${HOMEDIR}/conf.d/njs/nestapp:/root/nestapp
+     - ${HOMEDIR}/conf.d/njs/ngx-deps-app:/root/ngx-deps-app
     networks:
       restynet:
         ipv4_address: 172.245.18.4

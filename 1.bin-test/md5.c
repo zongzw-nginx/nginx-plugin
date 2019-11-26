@@ -61,11 +61,12 @@ int md5(char *data, char *output)
 
 int run_md5_n_times_with_timer(int num)
 {
-        int st, et; 
+        int st, et, stu, etu; 
         struct timeval tv;
 
         gettimeofday(&tv, NULL);
-        st = tv.tv_usec;
+        st = tv.tv_sec;
+        stu = tv.tv_usec;
 
         char strMd5[MD5_STRING_LENGTH + 1];
         memset(strMd5, 0, MD5_STRING_LENGTH + 1);
@@ -80,9 +81,10 @@ int run_md5_n_times_with_timer(int num)
         }
 
         gettimeofday(&tv, NULL);
-        et = tv.tv_usec;
+        et = tv.tv_sec;
+        etu = tv.tv_usec;
 
-        printf("%s: %s, tv:%d millisecs\n", strMd5, numstr, (et-st < 0)? et-st + 1000*1000 : et -st );
+        printf("%s: %s, tv:%d millisecs\n", strMd5, numstr, (et-st)*1000 + (etu - stu)/1000 );
 
         return 0;
 }

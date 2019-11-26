@@ -14,5 +14,5 @@ for var=0, arg[1]-1 do
 end
 local et = socket.gettime()
 
-local tc = math.floor((et - st)*1000000)
+local tc = math.floor((et - st)*1000)
 print(string.format("%s: %d, tv:%d millisecs", fin, arg[1]-1, tc))
