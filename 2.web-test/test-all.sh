@@ -16,6 +16,7 @@ echo "============ description ============="
 echo "Displays the response time(millisecs) of web services who calculate md5(1..10000)"
 echo 
 
+echo "run 20 times:"
 printf "$fmtstr" "Command" "Total Time" "Average Time"
 
 for task in \

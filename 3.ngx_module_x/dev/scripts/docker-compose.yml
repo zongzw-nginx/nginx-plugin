@@ -9,5 +9,5 @@ services:
      - 10081:80
     volumes:
      - ${HOMEDIR}/conf.d/nginx.conf:/etc/nginx/nginx.conf
-     - ${HOMEDIR}/modules:/root/modules
-
+     - ${HOMEDIR}/src:/root/src
+    entrypoint: "bash /root/daemon.sh"
