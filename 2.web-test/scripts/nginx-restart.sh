@@ -1,3 +1,3 @@
 #!/bin/bash 
 
-docker exec NGINX nginx -s reload
+docker exec TESTNGX nginx -s reload

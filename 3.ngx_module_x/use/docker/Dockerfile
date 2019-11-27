@@ -7,4 +7,7 @@ RUN apt-get install -y npm
 RUN npm install -g forever
 
 WORKDIR /root
-# RUN npm install -g @nestjs/cli
+RUN wget 'http://nginx.org/download/nginx-1.16.1.tar.gz'
+RUN tar -xzvf nginx-1.16.1.tar.gz
+
+WORKDIR /root

@@ -18,7 +18,7 @@ services:
     build: ../docker/nginx
     image: zongzw/nginx:latest
     # image: nginx:latest
-    container_name: NGINX
+    container_name: TESTNGX
     ports:
      - 81:80
     volumes:

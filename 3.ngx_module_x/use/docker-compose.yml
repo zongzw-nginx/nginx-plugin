@@ -1,0 +1,16 @@
+version: "3"
+services:
+  nginx:
+    build: ./docker
+    image: zongzw/nginx-test-ngx_modules:latest
+    # image: nginx:latest
+    container_name: USENGX
+    ports:
+     - 10081:80
+    volumes:
+     - ${HOMEDIR}/conf.d/nginx.conf:/etc/nginx/nginx.conf
+     - ${HOMEDIR}/conf.d/js-modules:/etc/nginx/js-modules
+     - ${HOMEDIR}/modules/ngx_http_echo_module.so:/etc/nginx/modules/ngx_http_echo_module.so
+     - ${HOMEDIR}/modules/ngx_http_eval_module.so:/etc/nginx/modules/ngx_http_eval_module.so
+
+

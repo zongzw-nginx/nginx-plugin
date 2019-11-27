@@ -4,10 +4,9 @@ cdir=`cd $(dirname $0);pwd`
 (
     cd $cdir/scripts
 
-    docker ps | grep -oE "(NGINX|OPENRESTY)" > /dev/null
-    if [ $? -ne 0 ]; then ./compose.sh; fi
-    # ./compose.sh
-    # sleep 10
+    docker ps | grep -oE "(TESTNGX|OPENRESTY)" > /dev/null
+    # if [ $? -ne 0 ]; then ./compose.sh; fi
+    ./compose.sh
 )
 
 
@@ -36,3 +35,5 @@ for task in \
     
     printf "$fmtstr" "\"$tnm\"" "$sum" "$(($sum / 20))"
 done;
+
+docker stop TESTNGX OPENRESTY > /dev/null
