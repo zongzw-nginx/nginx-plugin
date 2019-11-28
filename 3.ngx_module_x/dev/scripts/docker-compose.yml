@@ -1,13 +1,13 @@
 version: "3"
 services:
   nginx:
-    build: ./docker
+    build: ${HOMEDIR}/docker
     image: zongzw/nginx-devel-ngx_modules:latest
     # image: nginx:latest
     container_name: DEVNGX
     ports:
      - 10081:80
     volumes:
-     - ${HOMEDIR}/conf.d/nginx.conf:/etc/nginx/nginx.conf
-     - ${HOMEDIR}/src:/root/src
+     - ${HOMEDIR}:/var/workspace
+    working_dir: /var/workspace
     entrypoint: "bash /root/daemon.sh"
