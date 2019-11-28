@@ -22,7 +22,9 @@ printf "$fmtstr" "Command" "Total Time" "Average Time"
 for task in \
     'http://localhost:81/localmd5/10000   |nginx->njs' \
     'http://localhost:81/remotemd5/10000  |nginx->nodejs' \
-    'http://localhost:80/md5sum/10000     |openresty->lua'; do 
+    'http://localhost:80/md5sum/10000     |openresty->lua' \
+    'http://localhost:81/md5-1.fcgi/10000 |nginx->cgi(1)' \
+    'http://localhost:81/md5-2.fcgi/10000 |nginx->cgi(2)'; do 
 
     url=`echo $task | cut -d ' ' -f 1`
     tnm=`echo $task | cut -d '|' -f 2`
@@ -37,4 +39,4 @@ for task in \
     printf "$fmtstr" "\"$tnm\"" "$sum" "$(($sum / 20))"
 done;
 
-docker stop TESTNGX OPENRESTY > /dev/null
+# docker stop TESTNGX OPENRESTY > /dev/null

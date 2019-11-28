@@ -6,7 +6,11 @@ docker-compose -f $HOMEDIR/scripts/docker-compose.yml \
     up -d --force-recreate
 
 docker exec TESTNGX \
-    forever start /root/ngx-deps-app/dist/main.js
+    forever start /root/src/ngx-deps-app/dist/main.js
+
+docker exec TESTNGX make -C /root/src/local-fcgi
+docker exec TESTNGX spawn-fcgi -p 8081 -f /root/src/local-fcgi/cgi-md5 -F 1
+docker exec TESTNGX spawn-fcgi -p 8082 -f /root/src/local-fcgi/cgi-md5 -F 6
 
 echo -n "Waiting for nestjs startup "
 i=0;
@@ -18,3 +22,4 @@ while [ $i -lt 20 ]; do
     sleep 1
 done
 echo 
+

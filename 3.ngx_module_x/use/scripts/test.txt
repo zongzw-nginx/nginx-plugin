@@ -1,0 +1,16 @@
+[zong@BEI-ML-00005205 use]$ for n in {1..100}; do curl http://localhost:10082/demo.cgi -s ; done
+.....
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 7 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 7 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 8 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 8 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 8 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 9 running on host <i>localhost</i>
+.....
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 38 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 38 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 39 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 39 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 39 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 40 running on host <i>localhost</i>
+<title>FastCGI Hello!</title><h1>FastCGI Hello!</h1>Request number 40 running on host <i>localhost</i>
