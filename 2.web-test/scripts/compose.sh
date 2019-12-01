@@ -10,7 +10,7 @@ docker exec TESTNGX \
 
 docker exec TESTNGX make -C /root/src/local-fcgi
 docker exec TESTNGX spawn-fcgi -p 8081 -f /root/src/local-fcgi/cgi-md5 -F 1
-docker exec TESTNGX spawn-fcgi -p 8082 -f /root/src/local-fcgi/cgi-md5 -F 6
+docker exec TESTNGX spawn-fcgi -p 8082 -f /root/src/local-fcgi/cgi-md5 -F 2
 
 echo -n "Waiting for nestjs startup "
 i=0;

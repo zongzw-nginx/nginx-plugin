@@ -3,6 +3,7 @@ services:
   nginx:
     build: ${HOMEDIR}/docker
     image: zongzw/nginx-devel-ngx_modules:latest
+    privileged: true
     # image: nginx:latest
     container_name: DEVNGX
     ports:

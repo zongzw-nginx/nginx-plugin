@@ -23,6 +23,7 @@ services:
      - 81:80
     volumes:
      - ${HOMEDIR}/conf.d/njs/nginx.conf:/etc/nginx/nginx.conf
+     - ${HOMEDIR}/modules/ngx_http_my_md5_module.so:/etc/nginx/modules/ngx_http_my_md5_module.so
      - ${HOMEDIR}/src/js-modules:/etc/nginx/js-modules
      - ${HOMEDIR}/src:/root/src
     networks:

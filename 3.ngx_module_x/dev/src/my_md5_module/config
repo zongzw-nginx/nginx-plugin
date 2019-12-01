@@ -1,0 +1,11 @@
+# ngx_addon_name=ngx_my_md5_module
+# HTTP_MODULES="$HTTP_MODULES ngx_my_md5_module"
+# NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_my_md5_module.c"
+
+ngx_module_type=HTTP
+ngx_module_name=ngx_http_my_md5_module
+ngx_module_srcs="$ngx_addon_dir/ngx_http_my_md5_module.c"
+
+. auto/module
+
+ngx_addon_name=$ngx_module_name
