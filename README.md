@@ -30,3 +30,27 @@ There are 3 folders, In 1.bin-test and 2.web-test folder, run `test_all.sh` to t
 **Note**:
 
 It will take some time to run it for the first time since all the running orchestrations are done in docker container, it may need some time to build or pull docker images. 
+
+
+## Test Result Captures:
+
+### Binary Test Result of Language Level:
+
+```
+Command                   Total Time    Average Time
+"./md5 10000"                    330              16
+"node md5.js 10000"              363              18
+"lua md5.lua 10000"             1741              87
+```
+
+### Web Test Result Based on Nginx Server
+
+```
+Command                   Total Time    Average Time
+"nginx->njs"                     390              19
+"nginx->nodejs"                  569              28
+"openresty->lua"                 810              40
+"nginx->cgi(1)"                  424              21
+"nginx->cgi(2>&1)"               423              21
+"nginx->plugin"                  436              21
+```
