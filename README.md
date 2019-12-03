@@ -27,6 +27,6 @@ There are 3 folders, In 1.bin-test and 2.web-test folder, run `test_all.sh` to t
   
   b) in use folder, there are some utilization sample on using kinds of nginx plugins.
 
-**Note: **:
+**Note**:
 
 It will take some time to run it for the first time since all the running orchestrations are done in docker container, it may need some time to build or pull docker images. 
