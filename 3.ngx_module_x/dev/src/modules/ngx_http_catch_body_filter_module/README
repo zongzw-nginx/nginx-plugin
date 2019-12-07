@@ -1,0 +1,15 @@
+Catch body filter module for nginx.
+
+This is a test module, to check request body filters experimental
+machinery to be introduced.
+
+Example:
+
+    location / {
+        catch_body on;
+    }
+
+The module will return 403 if there is an "X" char in the request body.
+
+To compile nginx with catch body module, use "--add-module <path>" option
+to nginx configure.
