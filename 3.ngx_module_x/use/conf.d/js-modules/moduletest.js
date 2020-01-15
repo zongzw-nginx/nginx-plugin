@@ -1,13 +1,30 @@
+var c = require('crypto');
+
 function moduleTest(res) {
     res.return(200, "The njs module was loaded.\n");
 }
 
-
-var c = require('crypto');
 function md5(data) {
 
     var hash = c.createHash('md5');
     return hash.update(data).digest('hex');
+}
+
+function foxfox_len(r) {
+    function calc_len(res) {
+        r.error(`${res.status}, ${res.responseBody}`);
+        r.return(res.status, `${res.responseBody.length}`);
+    }
+
+    r.subrequest(
+        '/fox_internal_uri', 
+        {
+            args: '',
+            method: 'GET',
+            body: JSON.stringify({})
+        },
+        calc_len
+    )
 }
 
 function run_md5_n_times_with_timer(num) {
@@ -59,4 +76,5 @@ function remotemd5(r) {
         body: JSON.stringify({})
     }, done);
 
-} 
+}
+
